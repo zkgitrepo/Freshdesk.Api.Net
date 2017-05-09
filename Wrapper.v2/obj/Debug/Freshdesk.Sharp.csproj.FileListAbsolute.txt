@@ -1,0 +1,8 @@
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\bin\Debug\Freshdesk.Sharp.dll
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\bin\Debug\Freshdesk.Sharp.pdb
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\bin\Debug\Newtonsoft.Json.dll
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\bin\Debug\RestSharp.dll
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\bin\Debug\Newtonsoft.Json.xml
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\bin\Debug\RestSharp.xml
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\obj\Debug\Freshdesk.Sharp.dll
+D:\Zahid Khan\GitHub\Freshdesk.Api.Net\Wrapper.v2\obj\Debug\Freshdesk.Sharp.pdb
