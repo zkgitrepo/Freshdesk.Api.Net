@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to Freshdesk API v2.0 wrapper for .NET
 
 You can use the [editor on GitHub](https://github.com/zkhan75/Freshdesk.Api.Net/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
