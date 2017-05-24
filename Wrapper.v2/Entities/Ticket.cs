@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Freshdesk.Sharp.Enums;
+using Freshdesk.Net.Enums;
 using Newtonsoft.Json;
 
 namespace Freshdesk.Sharp.Entities

@@ -1,0 +1,6 @@
+D:\Zahid Khan\TFS\GitHub\Freshdesk.Api\Wrapper.v2\bin\Release\Freshdesk.Sharp.dll
+D:\Zahid Khan\TFS\GitHub\Freshdesk.Api\Wrapper.v2\bin\Release\Freshdesk.Sharp.pdb
+D:\Zahid Khan\TFS\GitHub\Freshdesk.Api\Wrapper.v2\bin\Release\Newtonsoft.Json.dll
+D:\Zahid Khan\TFS\GitHub\Freshdesk.Api\Wrapper.v2\bin\Release\RestSharp.dll
+D:\Zahid Khan\TFS\GitHub\Freshdesk.Api\Wrapper.v2\obj\Production\Freshdesk.Sharp.dll
+D:\Zahid Khan\TFS\GitHub\Freshdesk.Api\Wrapper.v2\obj\Production\Freshdesk.Sharp.pdb

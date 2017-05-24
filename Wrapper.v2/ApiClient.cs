@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Text;
-using Freshdesk.Sharp.Constants;
 using Freshdesk.Sharp.Entities;
 using Newtonsoft.Json;
 using RestSharp;
 
 namespace Freshdesk.Sharp
 {
-    public class ApiClient
+
+    internal class ApiClient
     {
         private readonly string _apiKey;
         private readonly Uri _domain;
@@ -20,70 +19,7 @@ namespace Freshdesk.Sharp
             _domain = new Uri(domain);
         }
 
-        public List<Contact> SearchContact(string email)
-        {
-            var result = ExecuteRequest($"{ApiV2Urls.Contacts}?email={email}", Method.GET);
-            return result.StatusCode == HttpStatusCode.OK ? JsonConvert.DeserializeObject<List<Contact>>(result.Content) : new List<Contact>();
-        }
-
-        public Contact CreateContact(Contact contact)
-        {
-            contact.Active = null;
-            contact.Deleted = null;
-            contact.CreatedAt = null;
-
-            var result = ExecuteRequest(ApiV2Urls.Contacts, Method.POST, contact);
-            return result.StatusCode == HttpStatusCode.Created ? JsonConvert.DeserializeObject<Contact>(result.Content) : null;
-        }
-        public Contact ViewContact(string id)
-        {
-            if (string.IsNullOrEmpty(id) || string.IsNullOrWhiteSpace(id))
-            {
-                throw new Exception("Id is missing or empty");
-            }
-            var result = ExecuteRequest($"{ApiV2Urls.Contacts}/{id}", Method.GET);
-            return result.StatusCode == HttpStatusCode.OK ? JsonConvert.DeserializeObject<Contact>(result.Content) : null;
-        }
-
-        public Contact UpdateContact(Contact contact)
-        {
-            if (contact.Id <= 0)
-            {
-                throw new Exception("Contact Id is missing");
-            }
-            var result = ExecuteRequest($"{ApiV2Urls.Contacts}/{contact.Id}", Method.PUT, contact);
-            return result.StatusCode == HttpStatusCode.OK ? JsonConvert.DeserializeObject<Contact>(result.Content) : null;
-        }
-        public bool DeleteContact(string id)
-        {
-            if (string.IsNullOrEmpty(id) || string.IsNullOrWhiteSpace(id))
-            {
-                throw new Exception("Id is missing or empty");
-            }
-            var result = ExecuteRequest($"{ApiV2Urls.Contacts}/{id}", Method.DELETE);
-            return result.StatusCode == HttpStatusCode.NoContent;
-        }
-
-        public List<Contact> ListAllContacts()
-        {
-            var result = ExecuteRequest(ApiV2Urls.Contacts, Method.GET);
-            return result.StatusCode == HttpStatusCode.OK ? JsonConvert.DeserializeObject<List<Contact>>(result.Content) : new List<Contact>();
-        }
-
-        public Ticket CreateTicket(Ticket ticket)
-        {
-            ticket.Deleted = null;
-            ticket.CreatedAt = null;
-            ticket.HasFirstEscalated = null;
-            ticket.IsEscalated= null;
-            if (string.IsNullOrEmpty(ticket.Type)) ticket.Type = null;
-
-            var result = ExecuteRequest(ApiV2Urls.Tickets, Method.POST, ticket);
-            return result.StatusCode == HttpStatusCode.Created ? JsonConvert.DeserializeObject<Ticket>(result.Content) : null;
-        }
-
-
-        private IRestResponse ExecuteRequest(string apiUrl, Method method, object requestBody = null)
+        public IRestResponse ExecuteRequest(string apiUrl, Method method, object requestBody = null)
         {
             var client = new RestClient(GetUrl(apiUrl));
             var result = client.Execute(GetRequest(method, requestBody));

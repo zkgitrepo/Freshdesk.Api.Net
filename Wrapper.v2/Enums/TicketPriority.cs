@@ -1,4 +1,4 @@
-﻿namespace Freshdesk.Sharp.Enums
+﻿namespace Freshdesk.Net.Enums
 {
     public enum TicketPriority
     {
